@@ -1,0 +1,12 @@
+*.iso
+*.o
+*.elf
+*.vmdk
+*.vmem
+*.lck
+*.nvram
+*.scoreboard
+*.vmsd
+*.vmx
+*.vmxf
+MertOS/
