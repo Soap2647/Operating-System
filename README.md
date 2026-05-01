@@ -1,37 +1,36 @@
-# 💻 Operating System Projects
+# Custom Operating System Kernel
 
-[![Category](https://img.shields.io/badge/Category-Operating_Systems-success.svg)](#)
+🇬🇧 **English:**
+A custom-built operating system kernel written in C and Assembly. It features a custom bootloader setup, low-level memory management, and hardware communication protocols. This project demonstrates fundamental OS concepts, including interrupt handling and basic terminal output. A WSL setup script is included to help configure the cross-compiler toolchain required for building the `.iso` image.
 
-*Projects, implementations, and assignments from the Operating Systems course / İşletim Sistemleri kapsamındaki proje ve ödevler*
+🇹🇷 **Türkçe:**
+C ve Assembly dilleri kullanılarak sıfırdan yazılmış özel bir işletim sistemi çekirdeğidir (kernel). Kendi bootloader (önyükleyici) yapılandırmasına, düşük seviyeli bellek yönetimine ve donanım iletişim protokollerine sahiptir. Kesme (interrupt) yönetimi ve temel terminal çıkışı gibi temel işletim sistemi kavramlarını uygulamalı olarak gösterir. `.iso` imajını derlemek için gereken çapraz derleyici (cross-compiler) ortamını kurmaya yardımcı olan bir WSL kurulum betiği içerir.
 
----
+## Features / Özellikler
 
-## 🇬🇧 English
+- **Custom Bootloader:** Boots the kernel via GRUB.
+- **Kernel:** Basic memory management and interrupt handlers.
+- **VGA Text Mode:** Custom terminal driver for displaying text on screen.
+- **Build System:** Makefile-based build process to generate bootable `.iso` files.
 
-### Overview
-This repository contains various academic projects and code implementations related to Operating Systems principles. The code covers core computing concepts, thread management, process scheduling, synchronization, and memory management algorithms.
+## Technologies Used / Kullanılan Teknolojiler
 
-### Key Topics Covered
-- Process and Thread Synchronization (Mutexes, Semaphores)
-- CPU Scheduling Algorithms
-- Memory Allocation & Paging implementations
-- Deadlock Avoidance techniques
+- **C & Assembly (x86)**
+- **GCC Cross-Compiler** (i686-elf)
+- **Make**
+- **QEMU** (for virtualization)
 
-### Getting Started
-Code is typically contained within standalone C/C++ or Python source files. Review specific folders for Makefile setups or instructions tailored to the given assignment. 
+## Setup and Execution / Kurulum ve Çalıştırma
 
----
-
-## 🇹🇷 Türkçe
-
-### Genel Bakış
-Bu depo, İşletim Sistemleri prensiplerini anlamak amacıyla geliştirilen çeşitli akademik projeleri ve yazılım ödevlerini barındırmaktadır. İş parçacığı (thread) yönetimi, işlemci zamanlama (scheduling), senkronizasyon ve bellek yönetimi algoritmaları üzerine odaklanmaktadır.
-
-### Temel Konular
-- İşlem ve İş Parçacığı Senkronizasyonu (Mutex ve Semaforlar)
-- CPU Zamanlama Algoritmaları
-- Bellek Yönetimi ve Sayfalama (Paging) Uygulamaları
-- Kilitlenme (Deadlock) Önleme teknikleri
-
-### Başlangıç
-Uygulamalar genellikle bağımsız C/C++ veya Python kaynak kodları şeklinde sunulmaktadır. İlgili klasörlerin içindeki derleme adımlarını (örneğin `.c` dosyası için `gcc`) takip edebilir veya mevcutsa `Makefile` kullanabilirsiniz.
+1. Set up the environment (WSL/Linux recommended) / Ortamı hazırlayın:
+   ```bash
+   ./setup_wsl.sh
+   ```
+2. Build the OS image / İşletim sistemi imajını derleyin:
+   ```bash
+   make
+   ```
+3. Run in QEMU / QEMU üzerinde çalıştırın:
+   ```bash
+   make run
+   ```
